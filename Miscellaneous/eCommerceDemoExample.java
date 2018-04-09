@@ -181,7 +181,7 @@ public class eCommerceDemoExample {
     
      @Test
     // Full list here: http://artoftesting.com/automationTesting/press-enter-tab-space-arrow-function-keys-in-selenium-webdriver-with-java.html
-    public void PressKeyboardKeys() throws InterruptedException {
+    public void KeyboardAction() throws InterruptedException {
 
         // Key - ENTER
         driver.findElement(By.id("small-searchterms")).sendKeys("Galaxy S6");
@@ -194,6 +194,21 @@ public class eCommerceDemoExample {
         driver.findElement(By.id("small-searchterms")).sendKeys("Galaxy S6");
         WebElement textbox2 = driver.findElement(By.id("small-searchterms"));
         textbox2.sendKeys(Keys.ESCAPE);
+        Thread.sleep(3000);
+    }
+    
+     @Test
+    // Full list here: http://artoftesting.com/automationTesting/handling-mouse-events-in-selenium.html
+    public void MouseAction() throws InterruptedException {
+
+        //WebElement which needs to be right clicked
+        WebElement rtClickElement = driver.findElement(By.id("small-searchterms"));
+
+        //Generating a Action to perform context click or right click
+        Actions rightClickAction = new Actions(driver).contextClick(rtClickElement);
+
+        //Performing the right click Action generated
+        rightClickAction.build().perform();
         Thread.sleep(3000);
 
     }
