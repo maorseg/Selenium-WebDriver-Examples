@@ -192,8 +192,8 @@ public class eCommerceDemoExample {
 
         // Key Esc`
         driver.findElement(By.id("small-searchterms")).sendKeys("Galaxy S6");
-        WebElement textbox7 = driver.findElement(By.id("small-searchterms"));
-        textbox7.sendKeys(Keys.ESCAPE);
+        WebElement textbox2 = driver.findElement(By.id("small-searchterms"));
+        textbox2.sendKeys(Keys.ESCAPE);
         Thread.sleep(3000);
 
     }
