@@ -179,6 +179,25 @@ public class eCommerceDemoExample {
     Thread.sleep(3000);
     }
     
+     @Test
+    // Full list here: http://artoftesting.com/automationTesting/press-enter-tab-space-arrow-function-keys-in-selenium-webdriver-with-java.html
+    public void PressKeyboardKeys() throws InterruptedException {
+
+        // Key - ENTER
+        driver.findElement(By.id("small-searchterms")).sendKeys("Galaxy S6");
+        WebElement textbox1 = driver.findElement(By.id("small-searchterms"));
+        textbox1.sendKeys(Keys.ENTER);
+        Thread.sleep(3000);
+
+
+        // Key Esc`
+        driver.findElement(By.id("small-searchterms")).sendKeys("Galaxy S6");
+        WebElement textbox7 = driver.findElement(By.id("small-searchterms"));
+        textbox7.sendKeys(Keys.ESCAPE);
+        Thread.sleep(3000);
+
+    }
+    
     @Test
     public void NewTestHere(){
 
