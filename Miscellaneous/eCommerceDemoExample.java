@@ -157,6 +157,29 @@ public class eCommerceDemoExample {
     }
 
     @Test
+    // Verify if a checkbox is checked or not
+    public void VerifyCheckboxChecked() throws InterruptedException {
+    driver.findElement(By.className("ico-register")).click();
+
+    // Scroll down and up example using JavascriptExecutor
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+
+    // Scroll the page down by 1000 pixel vertical
+    js.executeScript("window.scrollBy(0,1000)");
+    Thread.sleep(3000);
+
+    WebElement checkbox = driver.findElement(By.id("Newsletter"));
+    System.out.println("The checkbox state is - " + checkbox.isSelected());
+
+    //If the checkbox is unchecked then isSelected() will return false
+    //and NOT of false is true, hence we can click on checkbox
+    if(!checkbox.isSelected())
+        checkbox.click();
+
+    Thread.sleep(3000);
+    }
+    
+    @Test
     public void NewTestHere(){
 
     // ...
