@@ -2,7 +2,7 @@ package CrossBrowser;
 
 /**
  * Created by Maor on 31/03/2018.
- * Passing browser Parameter from testng xml file than run any @Test
+ * Passing browser parameter from testng xml file than run any @Test parallel on Multiple Browsers
  */
 
 import java.util.concurrent.TimeUnit;
@@ -95,7 +95,7 @@ public class CrossBrowser {
     {
         if (driver != null)
         {
-            System.out.println("Closing chrome browser...Please wait");
+            System.out.println("Closing browser...Please wait");
             driver.quit();
         }
     }
