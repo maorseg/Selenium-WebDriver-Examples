@@ -1,6 +1,10 @@
 package MySQL;
 
 /**
+JDBC makes it possible for the java class to connect to the Database,
+retrieve data from the database or for the matter of fact perform any of
+the CRUD (Create/Read/Update/Delete) operations, manipulate the resultant data and close the connection.
+
  * Created by Maor on 4/14/2018.
  * Connect MySQL Database via JDBC connectivity. Create, Read, Update, and Delete operations on the Database.
  * Prerequisites:
@@ -23,6 +27,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.sql.*;
 
+import static org.testng.Assert.assertNotNull;
+
 public class MySqlActionsOnTable {
 
     private static String userName;
@@ -32,13 +38,18 @@ public class MySqlActionsOnTable {
 
     @BeforeTest
     // Create Connection between Java to the DB
-    public void setUp() {
+    public void setUp () {
         try {
             userName = "root";
             password = "root";
 
-            // test is the DB name
-            dbURL = "jdbc:mysql://localhost:3307/test";
+            /*Get connection to the DB:
+            jdbc:mysql -> Java Database Connectivity API
+            127.0.0.1 -> local host
+            3307 -> port my SQL server is using
+            test -> the DB name i created for testing*/
+
+            dbURL = "jdbc:mysql://127.0.0.1:3307/test";
             Class.forName("com.mysql.jdbc.Driver");
         }
 
@@ -55,16 +66,34 @@ public class MySqlActionsOnTable {
             dbconnection = DriverManager.getConnection(dbURL, userName, password);
             Statement stmt  = dbconnection.createStatement();
 
-            // user is the table name
+            // Some Read Statement Variants below, in the same way, user can execute various queries on the database.
+
+            /*String sqlStr = "select * from user where id ='1'";
+            ResultSet resultSet  = stmt.executeQuery(sqlStr);
+            System.out.println(String.format("Table contains below data:"));
+            */
+
+            /*String sqlStr = "select * from user where age = '18';";
+            ResultSet resultSet  = stmt.executeQuery(sqlStr);
+            System.out.println(String.format("Table contains below data:"));*/
+
+
             String sqlStr = "select * from user;";
             ResultSet resultSet  = stmt.executeQuery(sqlStr);
             System.out.println(String.format("Table contains below data:"));
+
             // Print the result untill all the records are printed
             // res.next() returns true if there is any next record else returns false
+            // String getString() -> Method is used to fetch the string type data from the result set
 
             while (resultSet .next()) {
-                System.out.println(String.format("%s - %s - %s - %s ", resultSet .getString(1), resultSet .getString(2), resultSet .getString(3), resultSet .getString(4)));
-            }
+                {
+                    System.out.print(resultSet.getString(1));
+                    System.out.print("-" + resultSet.getString(2));
+                    System.out.print("-" + resultSet.getString(3));
+                    System.out.println("-" + resultSet.getString(4));
+                }
+           }
 
         }
 
@@ -160,7 +189,6 @@ public class MySqlActionsOnTable {
         }
 
     }
-
 
     @AfterTest
     public void tearDown () throws Exception {
