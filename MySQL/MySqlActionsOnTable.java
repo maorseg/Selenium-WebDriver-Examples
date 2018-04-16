@@ -1,25 +1,21 @@
 package MySQL;
 
 /**
- * Created by Maor on 4/15/2018.
- */
-
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-import java.sql.*;
-
-/**
  * Created by Maor on 4/14/2018.
+ * Connect MySQL Database via JDBC connectivity. Create, Read, Update, and Delete operations on the Database.
+ * Prerequisites:
  * 1. Download and install https://dev.mysql.com/downloads/installer/ --> Windows (x86, 32-bit), MSI Installer
  * 2. Open MySQL command line client from Start menu
- (default userName = "root"; password = "root";
- * 3. To view available databases In mysql -> "show databases;"
- * 4. Create DB -> "CREATE DATABASE test";
- * 5. To use test DB -> "use test"
- * 5. To show all tables in the DB -> "show tables;"
- * 6. To insert values to the DB -> "INSERT INTO user (id, name, city, age) VALUES (?, '?', '?', ?)";
- * 7. Select all values from the tacle -> "select * from user;"
+      (default userName = "root"; password = "root";
+ * Run commands:
+ * 3. show databases;
+ * 4. CREATE DATABASE test;
+ * 5. use test
+ * 5. show tables;
+ * 6. CREATE TABLE user (id INT(6), name VARCHAR(20), city VARCHAR(20), age INT(6));
+ * 7. INSERT INTO user (id, name, city, age) VALUES (?, '?', '?', ?)
+ * 8. select * from user;
+ * That's all - test DB is ready
  */
 
 import org.testng.annotations.AfterTest;
@@ -37,7 +33,6 @@ public class MySqlActionsOnTable {
     @BeforeTest
     // Create Connection between Java to the DB
     public void setUp() {
-
         try {
             userName = "root";
             password = "root";
@@ -68,7 +63,7 @@ public class MySqlActionsOnTable {
             // res.next() returns true if there is any next record else returns false
 
             while (resultSet .next()) {
-                System.out.println(String.format("%s , %s , %s , %s ", resultSet .getString(1), resultSet .getString(2), resultSet .getString(3), resultSet .getString(4)));
+                System.out.println(String.format("%s - %s - %s - %s ", resultSet .getString(1), resultSet .getString(2), resultSet .getString(3), resultSet .getString(4)));
             }
 
         }
@@ -91,6 +86,7 @@ public class MySqlActionsOnTable {
 
             // The mysql insert statement
             String query = " Insert into user (id, name , city, age) values(?,?,?,?)";
+            System.out.println("Insert statement Done!");
 
             // Create the mysql insert prepared statement
             PreparedStatement preparedStmt = conn.prepareStatement(query);
@@ -112,7 +108,7 @@ public class MySqlActionsOnTable {
     }
 
     @Test
-    // Execute SQL Query - e.g. update  data values in MySql table
+    // Execute SQL Query - e.g. update data values in MySql table
     public static void UpdateValueInTable() {
         try {
             // Create a mysql Database connection
@@ -121,7 +117,8 @@ public class MySqlActionsOnTable {
             Connection conn = DriverManager.getConnection(myUrl, "root", "root");
 
             // The mysql update statement
-            String query = "update user set name = 'Frank', city = 'Paris', age = '68' where id = '1'";
+            String query = "update user set name = 'Frank', city = 'Paris', age = '68' where id = '9'";
+            System.out.println("Update statement Done!");
 
             // Create the mysql update prepared statement
             PreparedStatement preparedStmt = conn.prepareStatement(query);
@@ -137,10 +134,38 @@ public class MySqlActionsOnTable {
 
     }
 
+    @Test
+    // Execute SQL Query - e.g. Delete data values in MySql table
+    public static void DeleteValueInTable() {
+        try {
+            // Create a mysql Database connection
+            String myUrl = "jdbc:mysql://localhost:3307/test";
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(myUrl, "root", "root");
+
+            // The mysql delete statement
+            String query = "delete from user where id = '9'";
+            System.out.println("Delete statement Done!");
+
+            // Create the mysql update prepared statement
+            PreparedStatement preparedStmt = conn.prepareStatement(query);
+
+            // Execute the query
+            preparedStmt.execute();
+            conn.close();
+
+        }   catch (Exception e) {
+            System.out.println("Got an exception!");
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+
     @AfterTest
     public void tearDown () throws Exception {
         // Close database connection to free used memory
-        if (dbconnection != null) {
+            if (dbconnection != null) {
             dbconnection.close();
         }
     }
