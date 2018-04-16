@@ -38,7 +38,7 @@ public class MySqlActionsOnTable {
             password = "root";
 
             // test is the DB name
-            dbURL = "jdbc:mysql://127.0.0.1:3307/test";
+            dbURL = "jdbc:mysql://localhost:3307/test";
             Class.forName("com.mysql.jdbc.Driver");
         }
 
