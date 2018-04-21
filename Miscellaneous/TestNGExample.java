@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -22,7 +23,8 @@ public class TestNGExample {
     @BeforeTest
     public void setUp() {
         // code doing something here...
-        System.out.println("Set up resource: e.g open DB connection");
+        System.out.println("Set up code run...");
+        Reporter.log("Set up resource - step pass");
 
     }
 
@@ -64,7 +66,7 @@ public class TestNGExample {
     @Test
     // Selenium WebDriver with TestNG framework
     // using Assert to verify expected vs. actual result for simple login scenario
-    public void SimpleLogin(){
+    public void SimpleLogin() {
 
         // Create firfox driver's instance
         WebDriver driver = new FirefoxDriver();
@@ -88,31 +90,33 @@ public class TestNGExample {
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-       // Some examples of asserts we can use, Asserts - Verify that result match to expected
+        // Some examples of TestNG Assertions i.e. validations in our tests to report them as pass or fail
 
-        /*1. Assert.assertEquals
+        //1. Assert.assertEquals
         Assert.assertEquals(result, "Login was unsuccessful. Please correct the errors and try again.\n" +
-        "No customer account found");*/
+        "No customer account found","Login unsuccessful notification, Actual doesn't match to Expected.");
 
         /*2. assertTrue
-        Assert.assertTrue(result.contains("Login was unsuccessful"));*/
+        Assert.assertTrue(result.contains("Login was unsuccessful"),"Condition return false instead of true.");*/
 
         /*3. assertFalse
-        Assert.assertFalse(result.contains("Login was successful"));*/
+        Assert.assertFalse(result.contains("Error in login"),"Condition return true instead of false.");*/
 
         /*4. assertNotNull
         Assert.assertNotNull(result);*/
+        }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    }
 
     @AfterTest
     public void tearDown() {
         if(driver!= null) {
-            System.out.println("Close resource: e.g quit session");
+            System.out.println("Close resource code run...");
+            Reporter.log("Close resource - step pass");
             driver.quit();
         }
     }
 }
+
+
 
