@@ -1,5 +1,7 @@
 package MySQL;
 
+package MySQL;
+
 /**
 JDBC makes it possible for the java class to connect to the Database,
 retrieve data from the database or for the matter of fact perform any of
@@ -22,12 +24,13 @@ the CRUD (Create/Read/Update/Delete) operations, manipulate the resultant data a
  * That's all - test DB is ready
  */
 
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.sql.*;
 
-import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.*;
 
 public class MySqlActionsOnTable {
 
@@ -82,7 +85,7 @@ public class MySqlActionsOnTable {
             ResultSet resultSet  = stmt.executeQuery(sqlStr);
             System.out.println(String.format("Table contains below data:"));
 
-            // Print the result untill all the records are printed
+            // Print the result until all the records are printed
             // res.next() returns true if there is any next record else returns false
             // String getString() -> Method is used to fetch the string type data from the result set
 
@@ -93,7 +96,14 @@ public class MySqlActionsOnTable {
                     System.out.print("-" + resultSet.getString(3));
                     System.out.println("-" + resultSet.getString(4));
                 }
-           }
+
+                // Verify all results not null i.e. there are non null records in our DB
+                Assert.assertNotNull(resultSet.getString(1));
+                Assert.assertNotNull(resultSet.getString(2));
+                Assert.assertNotNull(resultSet.getString(3));
+                Assert.assertNotNull(resultSet.getString(4));
+
+            }
 
         }
 
@@ -107,6 +117,7 @@ public class MySqlActionsOnTable {
     @Test
     // Execute SQL Query - e.g. insert new data values to MySql table
     public static void WriteToTable() {
+        PreparedStatement preparedStmt = null;
         try {
             // Create a mysql Database connection
             String myUrl = "jdbc:mysql://localhost:3307/test";
@@ -118,7 +129,7 @@ public class MySqlActionsOnTable {
             System.out.println("Insert statement Done!");
 
             // Create the mysql insert prepared statement
-            PreparedStatement preparedStmt = conn.prepareStatement(query);
+            preparedStmt = conn.prepareStatement(query);
 
             // 1/2/3/4 i.e column number and than the value to insert
             preparedStmt.setString(1, "9");
