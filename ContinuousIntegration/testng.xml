@@ -15,7 +15,7 @@
             </run>
         </groups>
         <classes>
-            <class name="ContinuousIntegration.FirstSeleniumTestScript" />
+            <class name="continuouscntegration.FirstSeleniumTestScript" />
         </classes>
     </test>
 </suite>
