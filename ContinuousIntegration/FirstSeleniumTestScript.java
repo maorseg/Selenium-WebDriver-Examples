@@ -1,4 +1,4 @@
-package ContinuousIntegration;
+package continuousintegration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
