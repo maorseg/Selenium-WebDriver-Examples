@@ -1,4 +1,4 @@
-package RobotClassUtility;
+package robotclassutility;
 
 /**
  * Created by Maor on 4/13/2018.
