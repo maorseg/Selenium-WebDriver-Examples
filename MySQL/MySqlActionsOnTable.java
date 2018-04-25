@@ -1,6 +1,4 @@
-package MySQL;
-
-package MySQL;
+package mysql;
 
 /**
 JDBC makes it possible for the java class to connect to the Database,
