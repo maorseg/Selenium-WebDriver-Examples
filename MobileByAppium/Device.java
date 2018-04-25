@@ -1,4 +1,4 @@
-package MobileByAppium;
+package mobilebyappium;
 
 /**
  * Created by Maor on 4/12/2018.
