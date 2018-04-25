@@ -1,4 +1,4 @@
-package CaptureScreenshot;
+package capturescreenshot;
 
 /**
  * Created by Maor on 31/03/2018.
