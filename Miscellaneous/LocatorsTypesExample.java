@@ -1,4 +1,4 @@
-package Miscellaneous;
+package miscellaneous;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
