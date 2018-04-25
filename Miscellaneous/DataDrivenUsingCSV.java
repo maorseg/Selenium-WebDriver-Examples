@@ -1,4 +1,4 @@
-package Miscellaneous;
+package miscellaneous;
 
 /**
  * Created by Maor on 07/04/2018.
