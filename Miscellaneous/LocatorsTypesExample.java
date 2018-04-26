@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Maor on 4/22/2018.
- * Various types of locators examples in Selenium to build test scripts:
+ * Various types of locators (HTML Attributes) examples in Selenium to build test scripts:
  * By.id (id's are the most preferred way)
  * By.name (after id's this is second preference)
  * ByClassName
