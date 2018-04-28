@@ -1,0 +1,10 @@
+Download MSI installation file from:
+https://jenkins.io/download/
+or Download the latest version of jenkins.war from:
+https://updates.jenkins-ci.org/download/war/  (this is the official website of Jenkins).
+Create a folder with name 'Jenkins' in your C: directory and move the downloaded jenkins.war in it.
+Type cmd in Run to open command prompt and navigate to C:\Jenkins
+Execute 'java -jar Jenkins.war' command and it will start installing Jenkins.
+Follow instructins to complete installation
+configure Jenkins to run maven @tests by following below youtube guide:
+https://www.youtube.com/watch?v=eIldJE4tSlA
