@@ -3,6 +3,7 @@ package crossbrowser;
 /**
  * Created by Maor on 31/03/2018.
  * Passing browser parameter from testng xml file than run any @Test parallel on Multiple Browsers
+ * Run the tests by right click on the testng.xml
  */
 
 import java.util.concurrent.TimeUnit;
