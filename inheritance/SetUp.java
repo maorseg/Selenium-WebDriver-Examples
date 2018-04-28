@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Maor on 01/04/2018.
  * Inheritance Selenium with testNG example, TestAnyWebSite class extends SetUp class
- * Run testng.xml and it will run the specified class tests
+ * Run the tests by right click on the testng.xml
  */
 
 public class SetUp {
