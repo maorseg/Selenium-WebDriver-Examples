@@ -2,7 +2,8 @@ package inheritance;
 
 /**
  * Created by Maor on 01/04/2018.
- * Inheritance Selenium with testNG example, TestAnyWebSite class extends SetUp class
+ * Inheritance Selenium with testNG example, TestAnyWebSite class extends SetUp class i.e TestAnyWebSite class is inheriting all
+ * the variables and methods defined in SetUp class
  * Run the tests by right click on the testng.xml
  */
 
