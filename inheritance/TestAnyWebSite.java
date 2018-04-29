@@ -18,6 +18,7 @@ public class TestAnyWebSite extends SetUp {
     public void ClickOnElementById() throws Exception {
         driver.findElement(By.id("radio1")).click();
         Thread.sleep(2000);
+        // We are calling the CaptureScreenshot method defined in SetUp
         CaptureScreenshot("ClickOnElementById");
         System.out.println("Test done - ClickOnElementById");
     }
@@ -32,6 +33,7 @@ public class TestAnyWebSite extends SetUp {
         Assert.assertEquals(result, "My First Name");
 
         Thread.sleep(2000);
+        // We are calling the CaptureScreenshot method defined in SetUp
         CaptureScreenshot("SendKeysToElement");
         System.out.println("Test done - SendKeysToElement");
     }
@@ -41,6 +43,7 @@ public class TestAnyWebSite extends SetUp {
     public void ClearInputBox() throws Exception {
         driver.findElement(By.name("fname")).clear();
         Thread.sleep(2000);
+        // We are calling the CaptureScreenshot method defined in SetUp
         CaptureScreenshot("ClearInputBox");
         System.out.println("Test done - ClearInputBox");
     }
