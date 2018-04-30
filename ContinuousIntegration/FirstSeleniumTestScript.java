@@ -13,7 +13,7 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by Maor on 4/17/2018.
  * Below tests run using testng.xml with Continuous Integration tool Jenkins with maven (you need to configure both to work on your pc
-   refer to the Jenkins quick installation guide txt guide in this package
+ * refer to the Jenkins quick installation guide txt guide in this package
  */
 public class FirstSeleniumTestScript {
 
