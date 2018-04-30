@@ -1,12 +1,20 @@
+Step1:
 Download MSI installation file from:
 https://jenkins.io/download/
-or Download the latest version of jenkins.war from:
-https://updates.jenkins-ci.org/download/war/  (this is the official website of Jenkins).
+Follow instructins to complete installation.
+or Download the latest version of jenkins.war file from:
+https://updates.jenkins-ci.org/download/war (this is the official website of Jenkins).
+
+Step2:
 Create a folder with name 'Jenkins' in your C: directory and move the downloaded jenkins.war in it.
-Type cmd in Run to open command prompt and navigate to C:\Jenkins
+Type cmd in windows "Run" to open command prompt and navigate to C:\Jenkins
 Execute 'java -jar Jenkins.war' command and it will start installing Jenkins.
-Follow instructins to complete installation
-Configure Jenkins to run maven @tests by following below youtube guide:
+Follow instructins to complete installation.
+
+Step3:
+Configure Jenkins to run @tests testng by maven following below youtube guide:
 https://www.youtube.com/watch?v=eIldJE4tSlA
-Configure Jenkins to send Email on build failure to gmail:
+
+Step4:
+Configure Jenkins to send Email on build failure to gmail following below youtube guide:
 https://www.youtube.com/watch?v=9JZS98NfpWk
