@@ -6,5 +6,7 @@ Create a folder with name 'Jenkins' in your C: directory and move the downloaded
 Type cmd in Run to open command prompt and navigate to C:\Jenkins
 Execute 'java -jar Jenkins.war' command and it will start installing Jenkins.
 Follow instructins to complete installation
-configure Jenkins to run maven @tests by following below youtube guide:
+Configure Jenkins to run maven @tests by following below youtube guide:
 https://www.youtube.com/watch?v=eIldJE4tSlA
+Configure Jenkins to send Email on build failure to gmail:
+https://www.youtube.com/watch?v=9JZS98NfpWk
