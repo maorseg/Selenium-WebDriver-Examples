@@ -24,7 +24,7 @@ import com.opencsv.CSVReader;
 public class DataDrivenUsingCSV2 {
 
     // Provide CSV file path
-    String CSV_PATH="C:\\Users\\Maor\\Desktop\\data driven\\DataDrivenUsingCSV_FacebookLogin.csv";
+    String CSV_PATH="C:\Users\Maor\Desktop\data driven\DataDrivenUsingCSV2.csv";
     WebDriver driver;
 
     @BeforeTest
