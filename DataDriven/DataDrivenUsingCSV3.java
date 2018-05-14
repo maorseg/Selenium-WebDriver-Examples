@@ -31,7 +31,7 @@ import com.opencsv.CSVReader;
 public class DataDrivenUsingCSV3 {
 
     // Provide CSV file path
-    String CSV_PATH="C:\\Users\\Maor\\Desktop\\data driven\\ContactUsCSV.csv";
+    String CSV_PATH="C:\Users\Maor\Desktop\data driven\DataDrivenUsingCSV3.csv";
     WebDriver driver;
 
     @BeforeTest
