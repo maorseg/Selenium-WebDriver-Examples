@@ -23,8 +23,12 @@ import org.testng.annotations.Test;
 
 public class DataDrivenUsingApachePOI {
     WebDriver driver;
+    
+    // XSSFWorkbook: It is a class represents XLSX file
     XSSFWorkbook workbook;
+    // XSSFSheet: It is a class represents a sheet in a XLSX file
     XSSFSheet sheet;
+    // XSSFCell: It is a class represents a cell in a row of XLSX file
     XSSFCell cell;
 
     @BeforeTest
