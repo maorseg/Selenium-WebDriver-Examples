@@ -14,6 +14,7 @@ import static inheritance.SetUp.driver;
 public class SeleniumExceptionsExample {
 
     @Test
+    // WebDriver is switching to an invalid/not available alert
     public void NoAlertPresentException(){
         try
         {
@@ -29,6 +30,8 @@ public class SeleniumExceptionsExample {
     }
 
     @Test
+    // WebDriver is unable to identify the element during run time
+    // i.e. FindBy method can’t find the element
     public void NoSuchElementException() {
 
         try
@@ -51,9 +54,39 @@ public class SeleniumExceptionsExample {
         {
             driver.manage().window().maximize();
         }
-        catch (WebDriverException e)
+        catch (WebDriverException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    // Thrown when the driver is switching to an invalid frame
+    public void NoSuchFrameException() {
+
+        try
+        {
+            WebDriver driver = new FirefoxDriver();
+            driver.get("https://stackoverflow.com");
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+            driver.switchTo().frame("frame_a");
+        }
+        catch (NoSuchFrameException e)
         {
             e.printStackTrace();
         }
     }
-}
+
+        @Test
+        // Thrown when the driver is switching to an invalid Window
+        public void NoSuchWindowException() {
+
+            try {
+                WebDriver driver = new FirefoxDriver();
+                driver.get("https://stackoverflow.com");
+                driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+                driver.switchTo().window("invalidwindowname");
+            } catch (NoSuchWindowException e) {
+                e.printStackTrace();
+            }
+        }
+    }
