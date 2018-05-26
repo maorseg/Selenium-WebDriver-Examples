@@ -1,0 +1,18 @@
+package corejava.basics;
+
+/**
+ * Created by Maor on 5/22/2018.
+ */
+
+public class Print2 {
+
+    // Declaring a variable named website and print some text and go to new line
+    static String website = "www.google.com";
+
+    public static void main(String [] args){
+        /* Print text and go to new line
+         we use "+" to concatenate website with the given text*/
+
+        System.out.println("Learning Java from " + website);
+    }
+}
