@@ -6,7 +6,7 @@ package corejava.accessmodifiers;
 public class PublicClassSeven {
 
     public static void main(String args[]){
-        // Created an object of ClassOne
+        // Created an object of ClassSix
         PublicClassSix obj = new PublicClassSix();
         // Trying to access the public method of PublicClassSix which is in packageSixPublic
 
