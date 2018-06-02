@@ -5,7 +5,6 @@ package corejava.accessmodifiers;
  */
 public class PublicClassSix {
 
-    // Here I did'nt mention any modifier so it acts as a default modifier.
     public int myMethod(int x){
         return x;
     }
