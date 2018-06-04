@@ -4,6 +4,7 @@ package corejava.arrays;
  * Created by Maor on 5/26/2018.
  */
 
+// Finding Length of Array:
 public class ArrayClass2 {
 
     public static void main(String[] args){
