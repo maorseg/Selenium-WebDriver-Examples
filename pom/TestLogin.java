@@ -45,7 +45,7 @@ public class TestLogin {
         Assert.assertEquals(loginPageTitle,"Log into Facebook");
 
         // login to WebPage
-        objLogin.loginToWebPage("maorseg@gmail.com", "rokiroki1");
+        objLogin.loginToWebPage("yourusername@gmail.com", "yourpassword");
 
         // Go the next page
         objHomePage = new Home(driver);
